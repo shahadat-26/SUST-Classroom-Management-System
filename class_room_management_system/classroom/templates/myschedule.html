@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+    {%for s in schedule %}
+    <p>Class Room No. : {{s.classroom.room_no}}</p>
+    <p>Time : {{s.time}} date : {{s.date}}</p>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% for c in id%}
+
+    <li> <h1>  <a href="{% url 'classroomdetail' c.room_no building_name%}"> {{c.room_no}} </a>  </h1> </li> 
+    {% endfor %}
+    
+
+{% endblock content %}

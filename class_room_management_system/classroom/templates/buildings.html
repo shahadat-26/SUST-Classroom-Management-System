@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% for building in buildinglist %}
+       <li> <h1>  <a href="{% url 'classrooms' building.name building.pk %}"> {{building.name}} </a>  </h1> </li> 
+    {% endfor %}
+    <!-- <p>IICT</p>
+    <p>Academic Building A</p>
+    <p>Academic Building B</p>
+    <p>Academic Building C</p>
+    <p>Academic Building D</p>
+    <p>Academic Building E</p> -->
+    
+    <script>
+
+    </script>
+
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- https://bootsnipp.com/snippets/qr9bx -->
+<style>
+    body
+{
+	background:#516b6e;
+}
+
+h1
+{
+	color:#fff;
+	margin:40px 0 60px 0;
+	font-weight:300;
+}
+
+.our-team-main
+{
+	width:100%;
+	height:auto;
+	border-bottom:5px #323233 solid;
+	background:#fff;
+	text-align:center;
+	border-radius:10px;
+	overflow:hidden;
+	position:relative;
+	transition:0.5s;
+	margin-bottom:28px;
+}
+
+
+.our-team-main img
+{
+	border-radius:50%;
+	margin-bottom:20px;
+	width: 90px;
+}
+
+.our-team-main h3
+{
+	font-size:20px;
+	font-weight:700;
+}
+
+.our-team-main p
+{
+	margin-bottom:0;
+}
+
+.team-back
+{
+	width:100%;
+	height:auto;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:5px 15px 0 15px;
+	text-align:left;
+	background:#fff;
+	
+}
+
+.team-front
+{
+	width:100%;
+	height:auto;
+	position:relative;
+	z-index:10;
+	background:rgb(187, 187, 187);
+	padding:15px;
+	bottom:0px;
+	transition: all 0.5s ease;
+}
+
+/* .our-team-main:hover .team-front
+{
+	bottom:-200px;
+	transition: all 0.5s ease;
+} */
+
+/* .our-team-main:hover
+{
+	border-color:#777;
+	transition:0.5s;
+} */
+
+/*our-team-main*/
+</style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <h1 class="text-center">SUST CLASS ROOM MANAGEMENT SYSTEM</h1>
+
+	
+	<div class="container">
+	<div class="row">
+	
+	<!--team-1-->
+	<div class="col-lg-4">
+        <a href="{% url 'buildings' %}">
+	<div class="our-team-main">
+	
+	<div class="team-front">
+	<img src="https://www.sust.edu/images/logo.png" class="img-fluid" />
+	<h3 style="pointer-events: none;">Academic Buildings</h3>
+	</div>
+	
+	
+	<div class="team-back">
+	</div>
+	
+    </div>
+        </a>
+	</div>
+	<!--team-5-->
+	
+	<!--team-6-->
+	<div class="col-lg-4">
+        <a href="{% url 'myschedule' %}">
+	<div class="our-team-main">
+	
+	<div class="team-front">
+	<img src="https://as2.ftcdn.net/jpg/02/03/64/27/500_F_203642794_Cp9fVr09XR4WPYNUCUgEHl9PvpO4Zklb.jpg" class="img-fluid" />
+	<h3 style="pointer-events: none;">My Schedule</h3>
+	</div>
+	
+	<div class="team-back">
+	</div>
+	
+    </div>
+</a>
+	</div>
+	<!--team-6-->
+	
+	
+	
+	</div>
+    </div>
+    
+
+{% endblock content %}
