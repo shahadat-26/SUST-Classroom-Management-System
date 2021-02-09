@@ -32,7 +32,7 @@ def loginPage(request):
             else:
                 messages.info(request, 'Username or Password is incorrect')
             
-        context = {'name':"Mozammal Hossain"}
+        context = {'name':"jugfujf"}
         return render(request,'login.html',context)
 
 def logoutUser(request):
@@ -91,7 +91,6 @@ def classroomdetailview(request,id,name):
         for r in result:
             schedule.append(r.time)
         print(schedule)
-        print("Mozammal Hossain")
         # print(created)
         return render(request,'classschedule.html',{'schedule':schedule})
         
@@ -105,3 +104,10 @@ def my_schedule(request):
     schedule = Track.objects.filter(user=user)
     print(schedule)
     return render(request,'myschedule.html',{'schedule':schedule})
+
+def del_my_schedule(request,id):
+    user = request.user
+    schedule = Track.objects.get(pk=id)
+    schedule.delete()
+    return redirect('myschedule')
+# def add_schedule(request):

@@ -12,5 +12,6 @@ urlpatterns = [
     path('calender',views.calender_page,name='calender'),
     path('classrooms/<name>/<int:id>',views.classrooms_views,name='classrooms'),
     path('classroomdetail/<id>/<name>/',views.classroomdetailview,name='classroomdetail'),
-    path('myschedule',views.my_schedule,name='myschedule')
+    path('myschedule',views.my_schedule,name='myschedule'),
+    path('delschedule/<id>/',views.del_my_schedule,name='delschedule'),
 ]
