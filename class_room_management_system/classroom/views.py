@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from . models import *
 from datetime import datetime
+import json
 # Create your views here.
 
 @login_required(login_url='login')
@@ -52,17 +53,21 @@ def registerPage(request):
     context={'form':form}
     return render(request, 'signup.html', context)
 
+@login_required(login_url='login')
 def mainView(request):
     return render(request, 'main.html')
 
+@login_required(login_url='login')
 def homeView(request):
     return render(request,'home.html')
 
+@login_required(login_url='login')
 def academicbuildings(request):
     buildinglist = Building.objects.all()
     context = {'buildinglist':buildinglist}
     return render(request,'buildings.html',context)
 
+@login_required(login_url='login')
 def calender_page(request):
     if request.method=="POST":
         date = request.POST.get('date')
@@ -71,10 +76,12 @@ def calender_page(request):
         print(date)
     return render(request,'calender.html')
 
+@login_required(login_url='login')
 def classrooms_views(request,name,id):
     classroomlist = Classroom.objects.filter(building__name__contains=name)
     return render(request,'classrooms.html',{'id':classroomlist,'building_name':id})
 
+@login_required(login_url='login')
 def classroomdetailview(request,id,name):
     result = 0
     classroom_details = Classroom.objects.get(room_no=id,building=name)
@@ -92,22 +99,44 @@ def classroomdetailview(request,id,name):
             schedule.append(r.time)
         print(schedule)
         # print(created)
-        return render(request,'classschedule.html',{'schedule':schedule})
+        return render(request,'classschedule.html',{'schedule':schedule,'date':date,'classroom_pk':classroom_details.pk})
         
 
 
     classroom_details = Classroom.objects.get(room_no=id,building=name)
     return render(request,'classroomdetail.html',{'details':classroom_details})
 
+@login_required(login_url='login')
 def my_schedule(request):
     user = request.user
     schedule = Track.objects.filter(user=user)
     print(schedule)
     return render(request,'myschedule.html',{'schedule':schedule})
 
+@login_required(login_url='login')
 def del_my_schedule(request,id):
     user = request.user
     schedule = Track.objects.get(pk=id)
     schedule.delete()
     return redirect('myschedule')
 # def add_schedule(request):
+@login_required(login_url='login')
+def book_schedule(request):
+    data = json.loads(request.body)
+    date = data['date']
+    time = data['time']
+    print("100 200 200 3000")
+    print(date)
+    classroom_primary_key = data['classroom_primary_key']
+    user = request.user
+    classroom_details = Classroom.objects.get(pk=classroom_primary_key)
+    print(classroom_details)
+    instance = Track(user=user,classroom=classroom_details,time=time,date=date)
+    instance.save()
+    result = Track.objects.filter(date=date,classroom=classroom_details)
+    schedule=[]
+    for r in result:
+        schedule.append(r.time)
+    print(schedule)
+    # print(created)
+    return render(request,'classschedule.html',{'schedule':schedule,'date':date,'classroom_pk':classroom_details.pk})
