@@ -10,10 +10,6 @@ from datetime import datetime
 import json
 # Create your views here.
 
-@login_required(login_url='login')
-def primary(request):
-    return HttpResponse("<h1>Sust Class Room Management System</h1>")
-
 
 def loginPage(request):
 
@@ -54,8 +50,13 @@ def registerPage(request):
     return render(request, 'signup.html', context)
 
 @login_required(login_url='login')
-def mainView(request):
-    return render(request, 'main.html')
+def profile(request):
+    user = request.user
+    userDetails = User.objects.get(username=user)
+    username = userDetails.username
+    email=userDetails.email
+    context={"username":username, "email":email}
+    return render(request, 'profile.html',context)
 
 @login_required(login_url='login')
 def homeView(request):

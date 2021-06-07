@@ -3,11 +3,9 @@ from .import views
 
 urlpatterns = [
     path('',views.homeView,name='home'),
-    path('primary',views.primary,name='primary'),
     path('login',views.loginPage, name='login'),
     path('register',views.registerPage, name='register'),
     path('logout',views.logoutUser,name="logout"),
-    path('main',views.mainView,name='main'),
     path('home',views.homeView, name='home'),
     path('buildings',views.academicbuildings,name='buildings'),
     path('calender',views.calender_page,name='calender'),
@@ -16,4 +14,5 @@ urlpatterns = [
     path('myschedule',views.my_schedule,name='myschedule'),
     path('delschedule/<id>/',views.del_my_schedule,name='delschedule'),
     path('update/',views.book_schedule,name='update'),
+    path('profile',views.profile,name='profile'),
 ]

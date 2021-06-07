@@ -220,10 +220,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	</button>
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		<div class="navbar-nav">
-          	<a href="#" class="nav-item nav-link">Profile</a>	
+		<div class="navbar-nav" style="margin: auto;" >
+          	<a href="{% url 'profile' %}" class="nav-item nav-link">Profile</a>	
 			<a href="{% url 'home' %}" class="nav-item nav-link">Home</a>		
-			<a href="#" class="nav-item nav-link">Contact</a>
+			
 		</div>
 		
 		
