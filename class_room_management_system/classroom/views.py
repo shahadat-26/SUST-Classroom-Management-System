@@ -74,7 +74,7 @@ def calender_page(request):
         date = request.POST.get('date')
         date = datetime.strptime(date,'%m/%d/%Y')
         date = date.strftime('%Y-%m-%d')
-        print(date)
+        
     return render(request,'calender.html')
 
 @login_required(login_url='login')
@@ -98,7 +98,7 @@ def classroomdetailview(request,id,name):
         schedule=[]
         for r in result:
             schedule.append(r.time)
-        print(schedule)
+        
         # print(created)
         return render(request,'classschedule.html',{'schedule':schedule,'date':date,'classroom_pk':classroom_details.pk})
         
@@ -111,7 +111,6 @@ def classroomdetailview(request,id,name):
 def my_schedule(request):
     user = request.user
     schedule = Track.objects.filter(user=user).order_by('date')
-    print(schedule)
     return render(request,'myschedule.html',{'schedule':schedule})
 
 @login_required(login_url='login')
@@ -146,23 +145,21 @@ def semester_selector(request, semester_no, classroom_pk):
     
     if semester_no=="1":
         session = 1
-        print(session)
+        
     if semester_no=="2":
         session = 2
-        print(session)
-    print("Hello")
+       
+    
     
     user = request.user
     classroom_details = Classroom.objects.get(pk=classroom_pk)
-    print(classroom_details)
+    
     
     if request.method=="POST":
         data = json.loads(request.body)
-        print("printing purchased data",data)
+        
         classTime = data['classTime']
-        print("This is Semester_selector function")
-        print("semester_no=",session)
-        print("semester current no=",semester_no)
+        
         classday=[]
         classperiod=[]
         for t in classTime:
@@ -188,7 +185,7 @@ def semester_selector(request, semester_no, classroom_pk):
                     instance = Track(user=user,classroom=classroom_details,time=int(period)+7,date=currentdate)
                     instance.save()    
                     cnt+=1       
-        print("Count = ",cnt)
+        
         
 
 
