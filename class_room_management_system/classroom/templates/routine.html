@@ -1,0 +1,239 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<h1 style="text-align: center;" >Slots for Semester</h1>
+<table border="5" cellspacing="0" align="center">
+    <!--<caption>Timetable</caption>-->
+    <tr>
+        <td align="center" height="50" 
+            width="100"><br>
+            <b>Day/Period</b></br>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>I<br>8:00-9:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>II<br>9:00-10:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>III<br>10:00-11:100</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>IV<br>11:00-12:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>V<br/>12:00-13:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>VI<br>13:00-14:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>VII<br>14:00-15:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>VIII<br>15:00-16:00</b>
+        </td>
+        <td align="center" height="50" 
+            width="100">
+            <b>IX<br>16:10-17:00</b>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Monday</b></td>
+        <td id="monday-1" onclick="selectSlot('monday-1')" align="center" height="50">Slot-1</td>
+        <td id="monday-2" onclick="selectSlot('monday-2')" align="center" height="50">Slot-2</td>
+        <td id="monday-3" onclick="selectSlot('monday-3')" align="center" height="50">Slot-3</td>
+        <td id="monday-4" onclick="selectSlot('monday-4')" align="center" height="50">Slot-4</td>
+        <td id="monday-5" onclick="selectSlot('monday-5')" align="center" height="50">Slot-5</td>
+        <td id="monday-6" onclick="selectSlot('monday-6')" align="center" height="50">Slot-6</td>
+        <td id="monday-7" onclick="selectSlot('monday-7')" align="center" height="50">Slot-7</td>
+        <td id="monday-8" onclick="selectSlot('monday-8')" align="center" height="50">Slot-8</td>
+        <td id="monday-9" onclick="selectSlot('monday-9')" align="center" height="50">Slot-9</td>
+        
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Tuesday</b>
+        </td>
+        <td id="tuesday-1" onclick="selectSlot('tuesday-1')" align="center" height="50">Slot-1</td>
+        <td id="tuesday-2" onclick="selectSlot('tuesday-2')" align="center" height="50">Slot-2</td>
+        <td id="tuesday-3" onclick="selectSlot('tuesday-3')" align="center" height="50">Slot-3</td>
+        <td id="tuesday-4" onclick="selectSlot('tuesday-4')" align="center" height="50">Slot-4</td>
+        <td id="tuesday-5" onclick="selectSlot('tuesday-5')" align="center" height="50">Slot-5</td>
+        <td id="tuesday-6" onclick="selectSlot('tuesday-6')" align="center" height="50">Slot-6</td>
+        <td id="tuesday-7" onclick="selectSlot('tuesday-7')" align="center" height="50">Slot-7</td>
+        <td id="tuesday-8" onclick="selectSlot('tuesday-8')" align="center" height="50">Slot-8</td>
+        <td id="tuesday-9" onclick="selectSlot('tuesday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Wednesday</b>
+        </td>
+        <td id="wednesday-1" onclick="selectSlot('wednesday-1')" align="center" height="50">Slot-1</td>
+        <td id="wednesday-2" onclick="selectSlot('wednesday-2')" align="center" height="50">Slot-2</td>
+        <td id="wednesday-3" onclick="selectSlot('wednesday-3')" align="center" height="50">Slot-3</td>
+        <td id="wednesday-4" onclick="selectSlot('wednesday-4')" align="center" height="50">Slot-4</td>
+        <td id="wednesday-5" onclick="selectSlot('wednesday-5')" align="center" height="50">Slot-5</td>
+        <td id="wednesday-6" onclick="selectSlot('wednesday-6')" align="center" height="50">Slot-6</td>
+        <td id="wednesday-7" onclick="selectSlot('wednesday-7')" align="center" height="50">Slot-7</td>
+        <td id="wednesday-8" onclick="selectSlot('wednesday-8')" align="center" height="50">Slot-8</td>
+        <td id="wednesday-9" onclick="selectSlot('wednesday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Thursday</b>
+        </td>
+        <td id="thursday-1" onclick="selectSlot('thursday-1')" align="center" height="50">Slot-1</td>
+        <td id="thursday-2" onclick="selectSlot('thursday-2')" align="center" height="50">Slot-2</td>
+        <td id="thursday-3" onclick="selectSlot('thursday-3')" align="center" height="50">Slot-3</td>
+        <td id="thursday-4" onclick="selectSlot('thursday-4')" align="center" height="50">Slot-4</td>
+        <td id="thursday-5" onclick="selectSlot('thursday-5')" align="center" height="50">Slot-5</td>
+        <td id="thursday-6" onclick="selectSlot('thursday-6')" align="center" height="50">Slot-6</td>
+        <td id="thursday-7" onclick="selectSlot('thursday-7')" align="center" height="50">Slot-7</td>
+        <td id="thursday-8" onclick="selectSlot('thursday-8')" align="center" height="50">Slot-8</td>
+        <td id="thursday-9" onclick="selectSlot('thursday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Friday</b>
+        </td>
+        <td id="friday-1" onclick="selectSlot('friday-1')" align="center" height="50">Slot-1</td>
+        <td id="friday-2" onclick="selectSlot('friday-2')" align="center" height="50">Slot-2</td>
+        <td id="friday-3" onclick="selectSlot('friday-3')" align="center" height="50">Slot-3</td>
+        <td id="friday-4" onclick="selectSlot('friday-4')" align="center" height="50">Slot-4</td>
+        <td id="friday-5" onclick="selectSlot('friday-5')" align="center" height="50">Slot-5</td>
+        <td id="friday-6" onclick="selectSlot('friday-6')" align="center" height="50">Slot-6</td>
+        <td id="friday-7" onclick="selectSlot('friday-7')" align="center" height="50">Slot-7</td>
+        <td id="friday-8" onclick="selectSlot('friday-8')" align="center" height="50">Slot-8</td>
+        <td id="friday-9" onclick="selectSlot('friday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+    <tr>
+        <td align="center" height="50">
+            <b>Saturday</b>
+        </td>
+        <td id="saturday-1" onclick="selectSlot('saturday-1')" align="center" height="50">Slot-1</td>
+        <td id="saturday-2" onclick="selectSlot('saturday-2')" align="center" height="50">Slot-2</td>
+        <td id="saturday-3" onclick="selectSlot('saturday-3')" align="center" height="50">Slot-3</td>
+        <td id="saturday-4" onclick="selectSlot('saturday-4')" align="center" height="50">Slot-4</td>
+        <td id="saturday-5" onclick="selectSlot('saturday-5')" align="center" height="50">Slot-5</td>
+        <td id="saturday-6" onclick="selectSlot('saturday-6')" align="center" height="50">Slot-6</td>
+        <td id="saturday-7" onclick="selectSlot('saturday-7')" align="center" height="50">Slot-7</td>
+        <td id="saturday-8" onclick="selectSlot('saturday-8')" align="center" height="50">Slot-8</td>
+        <td id="saturday-9" onclick="selectSlot('saturday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+
+    <tr>
+        <td align="center" height="50">
+            <b>Sunday</b>
+        </td>
+        <td id="sunday-1" onclick="selectSlot('sunday-1')" align="center" height="50">Slot-1</td>
+        <td id="sunday-2" onclick="selectSlot('sunday-2')" align="center" height="50">Slot-2</td>
+        <td id="sunday-3" onclick="selectSlot('sunday-3')" align="center" height="50">Slot-3</td>
+        <td id="sunday-4" onclick="selectSlot('sunday-4')" align="center" height="50">Slot-4</td>
+        <td id="sunday-5" onclick="selectSlot('sunday-5')" align="center" height="50">Slot-5</td>
+        <td id="sunday-6" onclick="selectSlot('sunday-6')" align="center" height="50">Slot-6</td>
+        <td id="sunday-7" onclick="selectSlot('sunday-7')" align="center" height="50">Slot-7</td>
+        <td id="sunday-8" onclick="selectSlot('sunday-8')" align="center" height="50">Slot-8</td>
+        <td id="sunday-9" onclick="selectSlot('sunday-9')" align="center" height="50">Slot-9</td>
+    </tr>
+</table>
+</br>
+<div style="width: 50%;">
+    <button onclick="onSubmit()" type="button" class="btn btn-primary">Primary</button>
+</div>
+<script>
+    let x=[];
+    // if(document.getElementById("123").style.color==="aqua")
+    //     {
+    //         document.getElementById("123").style.color="red"
+    //         x.push(document.getElementById("123").innerHTML);
+    //         console.log(document.getElementById("123").innerHTML);
+    //         console.log(x.length)
+    //     }
+    //     else{
+    //         document.getElementById("123").style.color="aqua"
+            
+    //     }
+    function selectSlot(slot){
+        
+       
+       
+       if(x.find(item=>item===slot)){
+        let index = x.findIndex(item=>item===slot)
+        document.getElementById(slot).style.color="black";
+        x.splice(index,1)
+
+       }
+       else{
+        x.push(slot)
+        x.forEach(element => {
+           document.getElementById(element).style.color="red";
+           console.log(element)
+       });
+
+       }
+       console.log(x)
+    }
+
+    let csrftoken = getCookie('csrftoken');
+
+    function onSubmit(){
+        var semno = "{{semester_no}}";
+        var classroom_pk = "{{classroom_pk}}";
+        let url = `/semester/${semno}/${classroom_pk}/`;
+        fetch(url,{
+            method:"POST",
+            headers:{
+                'Content-Type':'application/json',
+                'X-CSRFToken':csrftoken,
+             },
+             body:JSON.stringify({
+                'classTime':x 
+             }),
+        })
+        .then(response=>{
+            console.log(response)
+            location.reload();
+        })
+
+    }
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+return cookieValue;
+}
+
+</script>
+
+{% endblock content %} 
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    
+</body>
+  
+</html> -->

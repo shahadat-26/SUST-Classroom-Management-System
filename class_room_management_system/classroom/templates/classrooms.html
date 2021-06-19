@@ -3,10 +3,27 @@
 
 
 {% block content %}
-    {% for c in id%}
+   
 
-    <li> <h1>  <a href="{% url 'classroomdetail' c.room_no building_name%}"> {{c.room_no}} </a>  </h1> </li> 
-    {% endfor %}
+    <br/>
+    <div style="text-align: center;" class="cards">
+        <ul style="list-style-type:none;" >
+            {% for c in id %}
+            <li style="background: rgb(1 30 61);" class="card"> <h1 style="text-align: center; margin-top: 70px; ">  <a href="{% url 'classroomdetail' c.room_no building_name%}"> {{c.room_no}} </a>  </h1> </li> 
+            {% endfor %}
+            </ul>
+    </div> 
+    <style>
+        .cards {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 75px 1fr;
+}
+    </style>
     
 
 {% endblock content %}

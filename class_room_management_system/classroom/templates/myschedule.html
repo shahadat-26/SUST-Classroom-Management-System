@@ -171,7 +171,8 @@ idance .timetable {
                         <div class="timetable-item-main">
                             <div class="timetable-item-time">{{s.date}}</div>
                           <div class="timetable-item-time">{{s.time}}:00 - {{s.time|add:1}}:00</div>  
-                          <div class="timetable-item-name">Class Room No. : {{s.classroom.room_no}}</div>
+                          <div class="timetable-item-name">Class Room No : {{s.classroom.room_no}}</div>
+                          <div class="timetable-item-name">Building Name : {{s.classroom.building.name}}</div>
                             <a class="btn btn-primary btn-danger" href="{% url 'delschedule' s.pk %}"> Remove</a>
                             
 

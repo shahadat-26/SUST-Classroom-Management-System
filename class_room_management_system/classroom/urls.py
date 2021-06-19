@@ -15,4 +15,7 @@ urlpatterns = [
     path('delschedule/<id>/',views.del_my_schedule,name='delschedule'),
     path('update/',views.book_schedule,name='update'),
     path('profile',views.profile,name='profile'),
+    path('semester/<semester_no>/<classroom_pk>/',views.semester_selector,name='semester')
+    
+
 ]

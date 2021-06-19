@@ -3,19 +3,27 @@
 
 
 {% block content %}
+    <br/>
+    <div style="text-align: center;" class="cards">
+        <ul style="list-style-type:none;" >
+            {% for building in buildinglist %}
+               <li style="background: rgb(1 30 61);" class="card"><h1 style="text-align: center; margin-top: 70px; "><a href="{% url 'classrooms' building.name building.pk %}"> {{building.name}} </a></h1></li> </br>
+            {% endfor %}
+            </ul>
+    </div>    
+    <style>
+        .cards {
+    display: grid;
+    grid-gap: 10px;
+}
 
-    {% for building in buildinglist %}
-       <li> <h1>  <a href="{% url 'classrooms' building.name building.pk %}"> {{building.name}} </a>  </h1> </li> 
-    {% endfor %}
-    <!-- <p>IICT</p>
-    <p>Academic Building A</p>
-    <p>Academic Building B</p>
-    <p>Academic Building C</p>
-    <p>Academic Building D</p>
-    <p>Academic Building E</p> -->
-    
+.card {
+    display: grid;
+    grid-template-rows: max-content 75px 1fr;
+}
+    </style>
     <script>
-
+        
     </script>
 
 {% endblock content %}

@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from . models import *
-from datetime import datetime
+from datetime import datetime,date, timedelta
 import json
 # Create your views here.
 
@@ -105,12 +105,12 @@ def classroomdetailview(request,id,name):
 
 
     classroom_details = Classroom.objects.get(room_no=id,building=name)
-    return render(request,'classroomdetail.html',{'details':classroom_details})
+    return render(request,'classroomdetail.html',{'details':classroom_details, 'classroom_pk':classroom_details.pk})
 
 @login_required(login_url='login')
 def my_schedule(request):
     user = request.user
-    schedule = Track.objects.filter(user=user)
+    schedule = Track.objects.filter(user=user).order_by('date')
     print(schedule)
     return render(request,'myschedule.html',{'schedule':schedule})
 
@@ -141,3 +141,57 @@ def book_schedule(request):
     print(schedule)
     # print(created)
     return render(request,'classschedule.html',{'schedule':schedule,'date':date,'classroom_pk':classroom_details.pk})
+
+def semester_selector(request, semester_no, classroom_pk):
+    
+    if semester_no=="1":
+        session = 1
+        print(session)
+    if semester_no=="2":
+        session = 2
+        print(session)
+    print("Hello")
+    
+    user = request.user
+    classroom_details = Classroom.objects.get(pk=classroom_pk)
+    print(classroom_details)
+    
+    if request.method=="POST":
+        data = json.loads(request.body)
+        print("printing purchased data",data)
+        classTime = data['classTime']
+        print("This is Semester_selector function")
+        print("semester_no=",session)
+        print("semester current no=",semester_no)
+        classday=[]
+        classperiod=[]
+        for t in classTime:
+            classday.append(t.split("-")[0])
+            classperiod.append(t.split("-")[1])
+
+        if semester_no=="1":
+            start_date = date(datetime.today().year, 1, 1)
+            end_date = date(datetime.today().year, 6, 30)
+        if semester_no=="2":
+            start_date = date(datetime.today().year, 7, 1)
+            end_date = date(datetime.today().year, 12, 31)
+        delta = end_date - start_date
+        cnt=0
+        for i in range(delta.days + 1):
+            day = start_date + timedelta(days=i)
+            dayname = day.strftime("%A").lower()
+            # print("dayname", dayname.lower())
+            currentdate=day.strftime('%Y-%m-%d')
+            # print("currentdate=",currentdate)
+            for routineday, period in zip(classday, classperiod):
+                if routineday==dayname:
+                    instance = Track(user=user,classroom=classroom_details,time=int(period)+7,date=currentdate)
+                    instance.save()    
+                    cnt+=1       
+        print("Count = ",cnt)
+        
+
+
+    return render(request, 'routine.html',{'semester_no':semester_no,'classroom_pk':classroom_pk})
+
+        

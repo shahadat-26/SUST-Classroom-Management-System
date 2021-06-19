@@ -24,7 +24,7 @@ body {
 	font-size: 13px;
 }
 .navbar {
-	background: #fff;
+	background: rgb(13, 49, 82);
 	padding-left: 16px;
 	padding-right: 16px;
 	border-bottom: 1px solid #dfe3e8;
@@ -37,6 +37,9 @@ body {
 	margin: -8px 0;
 	float: left;
 	margin-right: 10px;
+}
+.nav-item{
+	color: cyan;
 }
 .navbar .navbar-brand {
 	padding-left: 0;
@@ -157,6 +160,9 @@ body {
 	text-align: center;
 	border-top: 1px solid #e0e0e0;
 }
+.bg-light{
+	background-color: #2c557f!important;
+}
 .or-seperator b {
 	color: #666;
 	padding: 0 8px;
@@ -210,10 +216,10 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 
 <!-- calender -->
 
-
+<!-- background-color:rgb(13, 49, 82)" -->
 </head> 
-<body style="background-color:rgba(60, 88, 84, 0.055);">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-color:rgb(5, 120, 155)">
+<nav  class="navbar navbar-expand-lg navbar-light">
 	<a href="{% url 'home' %}" class="navbar-brand">ClassRoom<br><b>ManagementSystem</b></a>  		
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
@@ -221,9 +227,9 @@ $(document).on("click", ".action-buttons .dropdown-menu", function(e){
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<div class="navbar-nav" style="margin: auto;" >
-          	<a href="{% url 'profile' %}" class="nav-item nav-link">Profile</a>	
-			<a href="{% url 'home' %}" class="nav-item nav-link">Home</a>		
-			
+          	<a style="color: cyan;" href="{% url 'profile' %}" class="nav-item nav-link">Profile</a>	
+			<a style="color: cyan;" href="{% url 'home' %}" class="nav-item nav-link">Home</a>		
+			 
 		</div>
 		
 		
