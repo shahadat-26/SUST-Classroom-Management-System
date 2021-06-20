@@ -3,13 +3,15 @@
 
 
 {% block content %}
-   
+<div style="text-align: center;" class="cards">
+    <h1>All the classrooms of {{building}}</h1>
+</div>
 
     <br/>
     <div style="text-align: center;" class="cards">
         <ul style="list-style-type:none;" >
             {% for c in id %}
-            <li style="background: rgb(1 30 61);" class="card"> <h1 style="text-align: center; margin-top: 70px; ">  <a href="{% url 'classroomdetail' c.room_no building_name%}"> {{c.room_no}} </a>  </h1> </li> 
+            <li style="background: rgb(1 30 61);" class="card"> <h1 style="text-align: center; margin-top: 70px; ">  <a href="{% url 'classroomdetail' c.room_no building_name%}">Room No: {{c.room_no}} </br> Room Type: {{c.room_type}}</a>  </h1> </li> 
             {% endfor %}
             </ul>
     </div> 

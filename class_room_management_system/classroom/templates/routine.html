@@ -151,8 +151,8 @@
     </tr>
 </table>
 </br>
-<div style="width: 50%;">
-    <button onclick="onSubmit()" type="button" class="btn btn-primary">Primary</button>
+<div  style="align-content: center;">
+    <button onclick="onSubmit()" type="button" class="btn btn-primary">Submit Semester Schedule</button>
 </div>
 <script>
     let x=[];
@@ -206,7 +206,7 @@
         })
         .then(response=>{
             console.log(response)
-            location.reload();
+            window.location.replace("/myschedule")
         })
 
     }

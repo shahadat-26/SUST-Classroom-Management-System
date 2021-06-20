@@ -80,7 +80,7 @@ def calender_page(request):
 @login_required(login_url='login')
 def classrooms_views(request,name,id):
     classroomlist = Classroom.objects.filter(building__name__contains=name)
-    return render(request,'classrooms.html',{'id':classroomlist,'building_name':id})
+    return render(request,'classrooms.html',{'id':classroomlist,'building_name':id,'building':name})
 
 @login_required(login_url='login')
 def classroomdetailview(request,id,name):
